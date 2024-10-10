@@ -1,20 +1,17 @@
+import "./src/server/server";
+
 import { config } from "dotenv";
 import path from "path";
-import { getAuthorizedCardTransactions } from "./src/account-balances/get-authorized-card-transactions";
-import { getBalanceInfo } from "./src/account-balances/get-balance-info";
-import { getBalancesList } from "./src/account-balances/get-balances-list";
-import { getAccountInfo } from "./src/accounts/get-account-info";
-import { getAccountsList } from "./src/accounts/get-accounts-list";
-import { getCustomerInfo } from "./src/clients/get-customer-info";
-import { getCustomersList } from "./src/clients/get-customer-list";
-import { getPaymentOperationList } from "./src/payment-links/get-payment-operation-list";
-import { getStatementsList } from "./src/statements/get-statements-list";
+import { auth } from "./src/oauth/auth";
+import { getAllConsentsList } from "./src/methods/consents/get-all-consents-list";
 
-(async () => {
-  config({ path: path.join(__dirname, "../env/.env") });
+config({ path: path.join(__dirname, "../env/.env") });
 
-  const accountId = process.env.ACCOUNT_ID;
-  const customerCode = process.env.CUSTOMER_CODE;
+(async (env: NodeJS.ProcessEnv) => {
+  auth(env);
+
+  const accountId = env.ACCOUNT_ID;
+  const customerCode = env.CUSTOMER_CODE;
 
   try {
     // /*  */
@@ -51,7 +48,11 @@ import { getStatementsList } from "./src/statements/get-statements-list";
     //   status: "APPROVED",
     // });
     // console.log("operationList", operationList.message.data.Data.Operation);
+    // /*  */
+    // const consents = await getAllConsentsList();
+    // console.log('consents', consents.message.data.Data)
+    // /*  */
   } catch (error) {
     console.error(error);
   }
-})();
+})(process.env);
