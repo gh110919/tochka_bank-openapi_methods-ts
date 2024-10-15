@@ -13,7 +13,7 @@ import { router } from "./router";
 
       console.log(true);
     } catch (error) {
-      console.clear()
+      console.clear();
       console.error(error);
     }
   });

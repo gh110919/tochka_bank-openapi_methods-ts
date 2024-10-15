@@ -7,7 +7,7 @@
     "paths": {
       "METHODS/*": ["src/methods/*"],
       "OAUTH/*": ["src/oauth/*"],
-      "SERVER/*": ["src/server/*"],
+      "SERVER/*": ["src/server/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
