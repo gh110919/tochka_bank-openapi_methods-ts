@@ -1,5 +1,5 @@
 import axios from "axios";
-import { stringify } from "querystring";
+import { stringify } from "qs";
 
 type TReturn<T> = Promise<{
   success: boolean;

@@ -1,5 +1,5 @@
 {
-  "exec": "ts-node .",
+  "exec": "npx ts-node -r tsconfig-paths/register .",
   "ext": "ts",
-  "watch": ["*/**"]
+  "watch": ["."]
 }

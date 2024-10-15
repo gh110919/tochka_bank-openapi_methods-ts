@@ -3,7 +3,7 @@ import cors from "cors";
 import { router } from "./router";
 
 ((server) => {
-  server.listen(443, async () => {
+  server.listen(80, () => {
     try {
       server
         .use(json())
@@ -13,6 +13,7 @@ import { router } from "./router";
 
       console.log(true);
     } catch (error) {
+      console.clear()
       console.error(error);
     }
   });

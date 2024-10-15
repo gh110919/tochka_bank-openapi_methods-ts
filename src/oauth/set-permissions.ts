@@ -1,4 +1,4 @@
-import axios, { RawAxiosRequestHeaders } from "axios";
+import axios from "axios";
 
 type TReturn<T> = Promise<{
   success: boolean;
@@ -51,7 +51,7 @@ export const setPermissions = async (
 
   const url = `https://enter.tochka.com/uapi/${apiVersion}/consents`;
 
-  const headers: RawAxiosRequestHeaders = {
+  const headers = {
     Authorization: `Bearer ${access_token}`,
   };
 

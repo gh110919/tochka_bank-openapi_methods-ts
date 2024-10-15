@@ -38,7 +38,7 @@ export const exchangeCodeAccess = async (
     grant_type: "authorization_code",
     scope: "accounts balances customers statements sbp payments",
     code,
-    redirect_uri: "http://localhost:8000/",
+    redirect_uri: "https://127.0.0.1/request_sign_permissions",
   };
 
   const headers = {

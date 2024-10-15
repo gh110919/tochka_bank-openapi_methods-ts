@@ -1,4 +1,5 @@
 import axios from "axios";
+import { stringify } from "qs";
 
 type TReturn<T> = Promise<{
   success: boolean;
@@ -36,7 +37,7 @@ export const getTokenPermissions = async (
     client_secret,
     grant_type: "client_credentials",
     scope: "accounts balances customers statements sbp payments",
-    state: "qwe",
+    state: JSON.stringify({ client_id, client_secret }),
   };
 
   const headers = {

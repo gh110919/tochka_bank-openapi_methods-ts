@@ -8,7 +8,7 @@ type TReturn<T> = Promise<{
 type TMessage<T> = {
   data: T;
 };
-let a = null;
+
 type TRequest = null;
 
 type TResponse = {
